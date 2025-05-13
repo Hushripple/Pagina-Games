@@ -4,7 +4,6 @@ function FooterComponent() {
   return (
     <footer
       style={{
-        backgroundColor: "#f8f9fa",
         paddingTop: "20px",
         paddingBottom: "20px",
       }}

@@ -7,6 +7,7 @@ import FooterComponent from "./components/FooterComponent";
 import AboutComponent from "./components/AboutComponent";
 import TrackInfoContainer from "./components/TrackInfoContainer";
 import ProyectosPage from "./pages/ProyectosPage";
+import ContactoComponent from "./components/ContactoComponent";
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
       <HeroComponent />
       <AboutComponent />
       <TrackInfoContainer />
+      <ContactoComponent></ContactoComponent>
       <ProyectosComponent />
     </>
   );

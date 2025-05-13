@@ -1,5 +1,4 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 
 function HeroComponent() {
   return (
@@ -18,19 +17,6 @@ function HeroComponent() {
               Bienvenid@ a <span style={{ color: "#b197fc" }}>CITT Games</span>{" "}
               Sede Puente Alto
             </h1>
-            <Link to="/proyectos">
-              <Button
-                variant="light"
-                style={{
-                  marginTop: "30px",
-                  border: "2px solid #b197fc",
-                  color: "#b197fc",
-                  fontWeight: "500",
-                }}
-              >
-                Conoce nuestros proyectos
-              </Button>
-            </Link>
           </Col>
         </Row>
       </Container>
