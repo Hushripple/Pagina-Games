@@ -25,7 +25,7 @@ function FooterComponent() {
             <p>
               Redes oficiales de{" "}
               <span style={{ color: "var(--color-games)", fontWeight: "bold" }}>
-                CITT:
+                CITT
               </span>
             </p>
             <div>

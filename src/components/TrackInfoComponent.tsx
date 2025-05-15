@@ -19,6 +19,7 @@ function HoverLinkButton({ to, children }: HoverLinkButtonProps) {
             : "var(--color-games)",
           borderColor: hover ? "var(--color-secondary)" : "var(--color-games)",
           color: "black",
+          fontWeight: "600",
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -31,40 +32,48 @@ function HoverLinkButton({ to, children }: HoverLinkButtonProps) {
 
 function TrackInfoComponent() {
   return (
-    <div style={{ color: "white", backgroundColor: "black" }}>
-      <Container className="py-5 mb-3">
-        <Row className="align-items-center">
-          <Col md={6}>
+    <div style={{ backgroundColor: "black", color: "white" }}>
+      <Container className="py-5">
+        <Row className="align-items-center text-center text-md-start">
+          <Col md={2} className="mb-4 mb-md-0 text-center">
+            <i
+              className="bi bi-stars"
+              style={{
+                fontSize: "4rem",
+                color: "var(--color-games)",
+              }}
+            ></i>
+          </Col>
+          <Col md={10}>
             <h2
               style={{
-                color: "var(--color-games)",
-                fontSize: "2.8rem",
+                fontSize: "2.6rem",
                 fontWeight: "bold",
+                color: "var(--color-games)",
               }}
             >
               ¿Qué es CITT Games?
             </h2>
-            <p>
+            <p
+              className="mt-3"
+              style={{ fontSize: "1.1rem", lineHeight: "1.7" }}
+            >
               CITT Games es una iniciativa estudiantil nacida dentro del track
               de videojuegos del Centro de Innovación y Transferencia
               Tecnológica (CITT) de DUOC UC, Sede Puente Alto. Nuestro objetivo
               es fomentar la creación colaborativa de videojuegos a través de un
               enfoque autodidacta, donde los estudiantes puedan aprender,
               experimentar y desarrollar sus habilidades en programación, arte
-              digital, diseño de juegos, sonido y otras áreas relacionadas. Este
-              track está pensado como un espacio abierto para compartir
+              digital, diseño de juegos, sonido y otras áreas relacionadas.
+              <br />
+              <br />
+              Este track está pensado como un espacio abierto para compartir
               conocimientos, trabajar en equipo y llevar nuestras ideas a
               proyectos concretos, desde prototipos hasta juegos completos.
             </p>
-            <HoverLinkButton to="/games">Más información</HoverLinkButton>
-          </Col>
-          <Col md={6} className="mt-4 mt-md-0 text-center">
-            <img
-              src="https://sm.ign.com/ign_ap/news/y/you-dont-n/you-dont-need-to-know-any-code-to-build-your-own-games_54ku.jpg"
-              alt="About"
-              className="img-fluid rounded shadow"
-              style={{ width: 600 }}
-            />
+            <div className="mt-3">
+              <HoverLinkButton to="/games">Más información</HoverLinkButton>
+            </div>
           </Col>
         </Row>
       </Container>
