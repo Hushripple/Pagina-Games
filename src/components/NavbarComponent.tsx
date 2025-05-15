@@ -10,11 +10,7 @@ function NavbarComponent() {
       style={{ backgroundColor: "black" }}
     >
       <Container>
-        <Navbar.Brand
-          as={Link}
-          to="/"
-          className="d-flex align-items-center gap-2 fw-semibold text-light"
-        >
+        <Navbar.Brand className="d-flex align-items-center gap-2 fw-semibold text-light">
           <img
             alt="Icon"
             src="assets/logo2.png"
