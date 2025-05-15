@@ -12,7 +12,7 @@ function AboutComponent() {
             src="https://i0.wp.com/gamingrespawn.com/wp-content/uploads/2023/04/Coding-vs-programming.jpg?ssl=1"
             alt="About"
             className="img-fluid shadow"
-            style={{ width: 600 }}
+            style={{ width: 600, backgroundColor: "#000000" }}
           />
         </Col>
         <Col md={6}>
