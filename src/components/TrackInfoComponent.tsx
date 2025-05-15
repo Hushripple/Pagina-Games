@@ -32,7 +32,7 @@ function HoverLinkButton({ to, children }: HoverLinkButtonProps) {
 function TrackInfoComponent() {
   return (
     <div style={{ color: "white", backgroundColor: "black" }}>
-      <Container className="py-5 mb-5">
+      <Container className="py-5 mb-3">
         <Row className="align-items-center">
           <Col md={6}>
             <h2
@@ -58,7 +58,7 @@ function TrackInfoComponent() {
             </p>
             <HoverLinkButton to="/games">Más información</HoverLinkButton>
           </Col>
-          <Col md={6}>
+          <Col md={6} className="mt-4 mt-md-0 text-center">
             <img
               src="https://sm.ign.com/ign_ap/news/y/you-dont-n/you-dont-need-to-know-any-code-to-build-your-own-games_54ku.jpg"
               alt="About"

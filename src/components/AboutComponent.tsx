@@ -5,7 +5,7 @@ function AboutComponent() {
     <div style={{ color: "white", backgroundColor: "#000000" }}>
       <Container className="py-5">
         <Row className="align-items-center">
-          <Col md={6}>
+          <Col md={6} className="mb-4 mb-md-0 text-center">
             <img
               src="https://i0.wp.com/gamingrespawn.com/wp-content/uploads/2023/04/Coding-vs-programming.jpg?ssl=1"
               alt="About"

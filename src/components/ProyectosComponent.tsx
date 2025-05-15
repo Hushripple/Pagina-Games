@@ -78,7 +78,7 @@ function ProyectosComponent() {
                 className="w-100 h-100 d-flex flex-column"
                 style={{
                   backgroundColor: "black",
-                  border: "1px solid rgba(255, 255, 0, 0.2)",
+                  border: "1px solid rgba(255, 255, 1, 0.38)",
                   boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
                   borderRadius: "12px",
                 }}
