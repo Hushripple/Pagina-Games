@@ -6,6 +6,8 @@ function FooterComponent() {
       style={{
         paddingTop: "20px",
         paddingBottom: "20px",
+        color: "white",
+        backgroundColor: "#161616",
       }}
     >
       <Container>
@@ -13,7 +15,7 @@ function FooterComponent() {
           <Col>
             <p>
               {" "}
-              <span style={{ color: "#b197fc", fontWeight: "bold" }}>
+              <span style={{ color: "var(--color-games)", fontWeight: "bold" }}>
                 © 2025 CITT GAMES
               </span>
               , Todos los derechos reservados
@@ -21,35 +23,35 @@ function FooterComponent() {
           </Col>
           <Col className="text-center text-md-end">
             <p>
-              Síguenos en nuestras{" "}
-              <span style={{ color: "#b197fc", fontWeight: "bold" }}>
-                redes sociales:
+              Redes oficiales de{" "}
+              <span style={{ color: "var(--color-games)", fontWeight: "bold" }}>
+                CITT:
               </span>
             </p>
             <div>
               <a
-                href="https://www.facebook.com/"
-                className="text-dark me-3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-facebook fs-4"></i>
-              </a>
-              <a
-                href="https://x.com/"
-                className="text-dark me-3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-twitter fs-4"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                className="text-dark"
+                href="https://www.instagram.com/cittduocuc/"
+                className="mx-1 text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i className="bi bi-instagram fs-4"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/citt_puentealto/"
+                className="mx-1 text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-instagram fs-4"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/c/CITTDuocUC"
+                className="mx-1 text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-youtube fs-4"></i>
               </a>
             </div>
           </Col>

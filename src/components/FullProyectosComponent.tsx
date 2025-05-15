@@ -6,7 +6,7 @@ function FullProyectosComponent() {
       <Row>
         {Array.from({ length: 9 }).map((_, index) => (
           <Col key={index} md={4} className="mb-4">
-            <Card>
+            <Card bg="dark" style={{ color: "white" }}>
               <Card.Body className="d-flex flex-column justify-content-between text-center">
                 <div>
                   <img

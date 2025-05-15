@@ -3,20 +3,32 @@ import { Container, Row, Col } from "react-bootstrap";
 function HeroComponent() {
   return (
     <div
-      className="hero-section"
+      className="text-light py-5 text-center"
       style={{
-        padding: "80px 0",
-        backgroundColor: "#f8f9fa",
-        textAlign: "center",
+        background: "black",
+        minHeight: "400px",
+        display: "flex",
+        alignItems: "center",
       }}
     >
       <Container>
         <Row className="justify-content-center">
           <Col md={8}>
-            <h1 style={{ fontSize: "2.8rem", fontWeight: "bold" }}>
-              Bienvenid@ a <span style={{ color: "#b197fc" }}>CITT Games</span>{" "}
+            <h1
+              className="fw-bolder display-4"
+              style={{
+                letterSpacing: "2px",
+                lineHeight: "1.3",
+                color: "var(--color-secondary)",
+              }}
+            >
+              Bienvenid@ a{" "}
+              <span style={{ color: "var(--color-games)" }}>CITT Games</span>{" "}
               Sede Puente Alto
             </h1>
+            <p className="lead mt-3">
+              Explora nuestro track, proyectos, y más.
+            </p>
           </Col>
         </Row>
       </Container>

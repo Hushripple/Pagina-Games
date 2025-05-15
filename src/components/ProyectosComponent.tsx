@@ -1,169 +1,133 @@
+import { useState } from "react";
 import { Card, Row, Col, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function ProyectosComponent() {
-  return (
-    <Container className="py-5" style={{ backgroundColor: "#f8f9fa" }}>
-      <Row>
-        <h1
-          className="text-center mb-4"
-          style={{ color: "#b197fc", fontSize: "2.8rem", fontWeight: "bold" }}
-        >
-          Proyectos destacados
-        </h1>
-        <Col md={4} className="mb-4">
-          <Card>
-            <Card.Body className="d-flex flex-column justify-content-between text-center">
-              <div>
-                <img
-                  src="src/assets/vn.png"
-                  alt="IMG"
-                  style={{ width: 300 }}
-                  className="mb-3"
-                />
-              </div>
-              <Card.Title style={{ color: "#b197fc" }}>
-                GAMES: First Day (Demo)
-              </Card.Title>
-              <Card.Text>
-                Novela visual desarrollada con Ren'Py. Cuenta la historia de una
-                estudiante de primer año de Ingeniería Informática apasionada
-                por los videojuegos. Sin embargo, se siente desanimada al
-                descubrir que su malla curricular no incluye nada relacionado
-                con ellos. Todo cambia cuando, durante una clase, su profesora
-                les habla sobre el CITT, una iniciativa que le ofrece la
-                oportunidad de unirse a un equipo para crear videojuegos junto a
-                otras personas con intereses similares.
-              </Card.Text>
-              <div className="d-flex justify-content-center mt-3">
-                <a
-                  href="https://github.com/Hushripple/Games-VN"
-                  target="_blank"
-                >
-                  <Button variant="secondary" className="me-2">
-                    Github Repo
-                  </Button>
-                </a>
+interface HoverButtonProps {
+  link: string;
+}
 
-                <a
-                  href="https://drive.google.com/file/d/1PIDwQwqW-1nUog-O8HG9PEu0kabdvaBc/view?usp=sharing"
-                  target="_blank"
+function HoverButton({ link }: HoverButtonProps) {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <Button
+        style={{
+          backgroundColor: hover
+            ? "var(--color-secondary)"
+            : "var(--color-games)",
+          borderColor: hover ? "var(--color-secondary)" : "var(--color-games)",
+          color: "black",
+        }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        Descargar
+      </Button>
+    </a>
+  );
+}
+
+function ProyectosComponent() {
+  const proyectos = [
+    {
+      titulo: "GAMES: First Day (Demo)",
+      imagen: "src/assets/vn.png",
+      ancho: 300,
+      texto:
+        "Novela visual hecha con Ren’Py sobre una estudiante de informática desanimada por la falta de videojuegos en su carrera. Todo cambia cuando su profesora le habla del CITT, donde conoce gente con intereses similares y puede trabajar en un proyecto real de desarrollo de juegos.",
+      link: "https://drive.google.com/file/d/1PIDwQwqW-1nUog-O8HG9PEu0kabdvaBc/view?usp=sharing",
+    },
+    {
+      titulo: "Face Your Fears",
+      imagen: "src/assets/fyf.png",
+      ancho: 335,
+      texto:
+        "Juego de terror y plataformas hecho con Godot. Enfrentas tus miedos en un mundo oscuro lleno de criaturas. Cada obstáculo superado fortalece al personaje. Más que una experiencia de suspenso, transmite un mensaje de valentía, lucha personal y crecimiento a través del desafío.",
+      link: "https://drive.google.com/file/d/1ti-p5gldwG6j7phaGkyc0nA6qItJlYmj/view?usp=drive_link",
+    },
+    {
+      titulo: "Isekai ni shinde...",
+      imagen: "src/assets/isekai.png",
+      ancho: 310,
+      texto:
+        "Clon de Zelda 1 (NES) hecho con Godot como parte de un proceso de aprendizaje. Aunque básico, sirvió para entender cómo se construyen juegos retro desde cero. Fue una práctica útil para aprender lógica, manejo de escenas, y experimentar con recursos dentro del motor Godot.",
+      link: "https://drive.google.com/drive/folders/112XajHOstoOSB_zV5GkOzXh-7kZ4eyuQ?usp=drive_link",
+    },
+  ];
+
+  const [hoverTodos, setHoverTodos] = useState(false);
+
+  return (
+    <Container className="py-5 px-4" style={{ backgroundColor: "black" }}>
+      <h1
+        className="text-center mb-5"
+        style={{
+          color: "var(--color-games)",
+          fontSize: "2.8rem",
+          fontWeight: "bold",
+        }}
+      >
+        Proyectos destacados
+      </h1>
+      <Row>
+        {proyectos.map((p, index) => (
+          <Col md={4} className="mb-4 d-flex" key={index}>
+            <Card
+              className="w-100 h-100 d-flex flex-column"
+              style={{
+                backgroundColor: "black",
+                border: "1px solid rgba(255, 255, 0, 0.2)",
+                boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
+                borderRadius: "12px",
+              }}
+            >
+              <Card.Body className="d-flex flex-column">
+                <div className="text-center mb-3">
+                  <img
+                    src={p.imagen}
+                    alt={`Imagen de ${p.titulo}`}
+                    style={{ width: p.ancho }}
+                    className="img-fluid rounded shadow-lg"
+                  />
+                </div>
+                <Card.Title
+                  className="text-center mb-2"
+                  style={{ color: "var(--color-games)", fontWeight: "bold" }}
                 >
-                  <Button
-                    style={{
-                      backgroundColor: "#b197fc",
-                      borderColor: "#b197fc",
-                    }}
-                  >
-                    Descargar
-                  </Button>
-                </a>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-4">
-          <Card>
-            <Card.Body className="d-flex flex-column justify-content-between text-center">
-              <div>
-                <img
-                  src="src/assets/fyf.png"
-                  alt="IMG"
-                  style={{ width: 335 }}
-                  className="mb-3"
-                />
-              </div>
-              <Card.Title style={{ color: "#b197fc" }}>
-                Face Your Fears
-              </Card.Title>
-              <Card.Text>
-                Face Your Fears es un juego de terror y plataformas desarrollado
-                en Godot y GDScript que te sumerge en el mundo de los miedos
-                infantiles. En esta demo, juegas como un niño valiente que debe
-                enfrentarse a sus pesadillas en un entorno oscuro y lleno de
-                criaturas aterradoras. A medida que avanzas y superas cada
-                miedo, el protagonista se vuelve más fuerte. Más allá del
-                suspenso y los desafíos, el juego transmite un mensaje
-                inspirador sobre la valentía y la superación personal.
-              </Card.Text>
-              <div className="d-flex justify-content-center mt-3">
-                <a
-                  href="https://danery-arriagada.itch.io/face-your-fears"
-                  target="_blank"
-                >
-                  <Button
-                    style={{
-                      backgroundColor: "#b197fc",
-                      borderColor: "#b197fc",
-                    }}
-                  >
-                    Itch.io
-                  </Button>
-                </a>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-4">
-          <Card>
-            <Card.Body className="d-flex flex-column justify-content-between text-center">
-              <div>
-                <img
-                  src="src/assets/isekai.png"
-                  alt="IMG"
-                  style={{ width: 310 }}
-                  className="mb-3"
-                />
-              </div>
-              <Card.Title style={{ color: "#b197fc" }}>
-                Isekai ni shinde...
-              </Card.Title>
-              <Card.Text>
-                Clon de Zelda 1 (NES) desarrollado con Godot y GDScript. Este
-                proyecto fue creado principalmente como parte de un proceso de
-                aprendizaje, siguiendo un tutorial paso a paso para entender
-                cómo se construyen desde cero los juegos de estilo. Aunque el
-                resultado es bastante limitado y simple en cuanto a mecánicas y
-                diseño, sirvió como una excelente base para experimentar con la
-                lógica del motor, el manejo de escenas y el uso de assets
-                prediseñados. Es un ejercicio práctico que permitió
-                familiarizarse con los fundamentos del desarrollo de videojuegos
-                en Godot.
-              </Card.Text>
-              <div className="d-flex justify-content-center mt-3">
-                <a
-                  href="https://drive.google.com/drive/folders/112XajHOstoOSB_zV5GkOzXh-7kZ4eyuQ?usp=drive_link"
-                  target="_blank"
-                >
-                  <Button
-                    style={{
-                      backgroundColor: "#b197fc",
-                      borderColor: "#b197fc",
-                    }}
-                  >
-                    Descargar
-                  </Button>
-                </a>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Row className="mt-4">
-          <Col className="d-flex justify-content-end">
-            <Link to="/proyectos">
-              <Button
-                variant="light"
-                style={{
-                  border: "2px solid #b197fc",
-                  color: "#b197fc",
-                  fontWeight: "500",
-                }}
-              >
-                Ver todos los proyectos
-              </Button>
-            </Link>
+                  {p.titulo}
+                </Card.Title>
+                <Card.Text style={{ flexGrow: 1, color: "white" }}>
+                  {p.texto}
+                </Card.Text>
+                <div className="d-flex justify-content-center mt-3">
+                  <HoverButton link={p.link} />
+                </div>
+              </Card.Body>
+            </Card>
           </Col>
-        </Row>
+        ))}
+      </Row>
+      <Row className="mt-4">
+        <Col className="d-flex justify-content-end">
+          <Link to="/proyectos">
+            <Button
+              style={{
+                backgroundColor: hoverTodos
+                  ? "var(--color-secondary)"
+                  : "var(--color-games)",
+                borderColor: hoverTodos
+                  ? "var(--color-secondary)"
+                  : "var(--color-games)",
+                color: "black",
+              }}
+              onMouseEnter={() => setHoverTodos(true)}
+              onMouseLeave={() => setHoverTodos(false)}
+            >
+              Todos los proyectos
+            </Button>
+          </Link>
+        </Col>
       </Row>
     </Container>
   );

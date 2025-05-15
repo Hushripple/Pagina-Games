@@ -1,12 +1,17 @@
-import { Row, Col, Container, Card, Button } from "react-bootstrap";
+import { Row, Col, Container, Card } from "react-bootstrap";
+import CopyButton from "./CopyButtonComponent";
 
 function ContactoComponent() {
   return (
-    <Container>
+    <Container style={{ color: "#f8f9fa" }}>
       <Row className="justify-content-center">
         <h1
-          className="text-center"
-          style={{ fontSize: "2.8rem", fontWeight: "bold", color: "#b197fc" }}
+          className="text-center mt-3"
+          style={{
+            fontSize: "2.8rem",
+            fontWeight: "bold",
+            color: "var(--color-games)",
+          }}
         >
           Contacto
         </h1>
@@ -14,85 +19,91 @@ function ContactoComponent() {
           Acá podrás encontrar información sobre los capitanes, profesores, etc,
           y sus medios de contacto.
         </p>
-        <Col md={4} className="mb-4">
-          <Card>
-            <Card.Body className="d-flex flex-column justify-content-between text-center">
-              <Card.Title style={{ color: "#b197fc" }}>Alan Gajardo</Card.Title>
+        <Col md={4} className="mb-4 d-flex">
+          <Card
+            className="w-100 h-100 shadow"
+            style={{
+              backgroundColor: "black",
+              border: "1px solid rgba(255, 255, 0, 0.2)",
+              boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
+              borderRadius: "12px",
+              color: "white",
+            }}
+          >
+            <Card.Body className="d-flex flex-column text-center">
+              <Card.Title
+                style={{ color: "var(--color-games)", fontWeight: "bold" }}
+              >
+                Alan Gajardo
+              </Card.Title>
               <Card.Text>
-                Profesor encargado de la coordinación general del CITT. Es quien
-                organiza y supervisa todas las actividades relacionadas con el
-                centro, incluyendo ayudantías, mejoras internas y cualquier
-                iniciativa vinculada al funcionamiento y desarrollo del CITT.
+                Profesor responsable de la coordinación general del CITT.
+                Supervisa las actividades internas, organiza iniciativas
+                académicas, y vela por el correcto funcionamiento del centro. Es
+                el principal referente ante dudas, propuestas o temas
+                administrativos relevantes.
               </Card.Text>
-              <div className="d-flex justify-content-center mt-3">
-                <Button
-                  onClick={() => {
-                    navigator.clipboard.writeText("CORREO AQUÍ");
-                  }}
-                  style={{
-                    backgroundColor: "#b197fc",
-                    borderColor: "#b197fc",
-                  }}
-                >
-                  Copiar correo
-                </Button>
+              <div className="d-flex justify-content-center mt-auto">
+                <CopyButton email="alan.gajardo@profesor.duoc.cl" />
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-4 d-flex">
+          <Card
+            className="w-100 h-100 shadow"
+            style={{
+              backgroundColor: "black",
+              border: "1px solid rgba(255, 255, 0, 0.2)",
+              boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
+              borderRadius: "12px",
+              color: "white",
+            }}
+          >
+            <Card.Body className="d-flex flex-column text-center">
+              <Card.Title
+                style={{ color: "var(--color-games)", fontWeight: "bold" }}
+              >
+                Diego Plaza
+              </Card.Title>
+              <Card.Text>
+                Capitán del track de Games. Lidera las actividades del grupo,
+                representa al equipo en reuniones oficiales y propone nuevas
+                ideas. Su función principal es motivar la participación,
+                coordinar proyectos internos y fortalecer el trabajo
+                colaborativo del equipo.
+              </Card.Text>
+              <div className="d-flex justify-content-center mt-auto">
+                <CopyButton email="di.plazam@duocuc.cl" />
               </div>
             </Card.Body>
           </Card>
         </Col>
         <Col md={4} className="mb-4">
-          <Card>
-            <Card.Body className="d-flex flex-column justify-content-between text-center">
-              <Card.Title style={{ color: "#b197fc" }}>Diego Plaza</Card.Title>
-              <Card.Text>
-                Capitán actual del track de Games. Se encarga de coordinar todo
-                lo relacionado exclusivamente con este track: asistir a
-                reuniones de capitanes, proponer ideas y nuevas iniciativas, y
-                fomentar la participación activa de sus miembros, promoviendo el
-                trabajo en equipo y el desarrollo conjunto de proyectos.
-              </Card.Text>
-              <div className="d-flex justify-content-center mt-3">
-                <Button
-                  onClick={() => {
-                    navigator.clipboard.writeText("CORREO AQUÍ");
-                  }}
-                  style={{
-                    backgroundColor: "#b197fc",
-                    borderColor: "#b197fc",
-                  }}
-                >
-                  Copiar correo
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-4">
-          <Card>
-            <Card.Body className="d-flex flex-column justify-content-between text-center">
-              <Card.Title style={{ color: "#b197fc" }}>
+          <Card
+            style={{
+              backgroundColor: "black",
+              border: "1px solid rgba(255, 255, 0, 0.2)",
+              boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
+              borderRadius: "12px",
+              color: "white",
+            }}
+          >
+            <Card.Body className="d-flex flex-column text-center shadow">
+              <Card.Title
+                style={{ color: "var(--color-games)", fontWeight: "bold" }}
+              >
                 Gabriel Valencia
               </Card.Title>
               <Card.Text>
-                Subcapitán del track de Games y apoyo del capitán. Colabora
-                activamente en todo lo relacionado con las actividades e
-                iniciativas, mostrando siempre una gran disposición. Cumple un
-                rol importante como representante en las reuniones internas,
-                aportando ideas, compartiendo opiniones y ayudando a mantener
-                una comunicación fluida entre los miembros.
+                Subcapitán del track de Games. Apoya al capitán en tareas
+                organizativas, colabora en reuniones y actividades, y actúa como
+                nexo entre los miembros del grupo. Participa activamente en
+                decisiones internas y mantiene comunicación directa con la
+                coordinación.
               </Card.Text>
-              <div className="d-flex justify-content-center mt-3">
-                <Button
-                  onClick={() => {
-                    navigator.clipboard.writeText("CORREO AQUÍ");
-                  }}
-                  style={{
-                    backgroundColor: "#b197fc",
-                    borderColor: "#b197fc",
-                  }}
-                >
-                  Copiar correo
-                </Button>
+              <div className="d-flex justify-content-center mt-auto">
+                <CopyButton email="ga.valenciam@duocuc.cl" />
               </div>
             </Card.Body>
           </Card>
