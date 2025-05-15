@@ -7,7 +7,7 @@ function ProyectosConstruccionPage() {
       className="d-flex align-items-center justify-content-center"
       style={{
         height: "100vh",
-        backgroundColor: "#121212",
+        backgroundColor: "black",
         color: "var(--color-games)",
         textAlign: "center",
         flexDirection: "column",

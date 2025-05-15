@@ -2,7 +2,7 @@ import { Container, Row, Col, Card, ProgressBar } from "react-bootstrap";
 
 function GamesPage() {
   return (
-    <Container className="py-5">
+    <Container className="py-5" style={{ backgroundColor: "black" }}>
       <h1
         className="text-center mb-3"
         style={{
