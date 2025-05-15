@@ -17,7 +17,7 @@ function NavbarComponent() {
         >
           <img
             alt="Icon"
-            src="src/assets/logo2.png"
+            src="assets/logo2.png"
             width="30"
             height="30"
             className="rounded"

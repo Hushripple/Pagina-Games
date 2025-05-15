@@ -32,7 +32,7 @@ function ProyectosComponent() {
   const proyectos = [
     {
       titulo: "GAMES: First Day (Demo)",
-      imagen: "src/assets/vn.png",
+      imagen: "assets/vn.png",
       ancho: 300,
       texto:
         "Novela visual hecha con Ren’Py sobre una estudiante de informática desanimada por la falta de videojuegos en su carrera. Todo cambia cuando su profesora le habla del CITT, donde conoce gente con intereses similares y puede trabajar en un proyecto real de desarrollo de juegos.",
@@ -40,7 +40,7 @@ function ProyectosComponent() {
     },
     {
       titulo: "Face Your Fears",
-      imagen: "src/assets/fyf.png",
+      imagen: "assets/fyf.png",
       ancho: 335,
       texto:
         "Juego de terror y plataformas hecho con Godot. Enfrentas tus miedos en un mundo oscuro lleno de criaturas. Cada obstáculo superado fortalece al personaje. Más que una experiencia de suspenso, transmite un mensaje de valentía, lucha personal y crecimiento a través del desafío.",
@@ -48,7 +48,7 @@ function ProyectosComponent() {
     },
     {
       titulo: "Isekai ni shinde...",
-      imagen: "src/assets/isekai.png",
+      imagen: "assets/isekai.png",
       ancho: 310,
       texto:
         "Clon de Zelda 1 (NES) hecho con Godot como parte de un proceso de aprendizaje. Aunque básico, sirvió para entender cómo se construyen juegos retro desde cero. Fue una práctica útil para aprender lógica, manejo de escenas, y experimentar con recursos dentro del motor Godot.",
