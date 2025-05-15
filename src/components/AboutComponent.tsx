@@ -2,7 +2,10 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function AboutComponent() {
   return (
-    <Container className="py-5" style={{ color: "#f8f9fa" }}>
+    <Container
+      className="py-5"
+      style={{ color: "white", backgroundColor: "#000000" }}
+    >
       <Row className="align-items-center">
         <Col md={6}>
           <img
