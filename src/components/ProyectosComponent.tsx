@@ -59,77 +59,79 @@ function ProyectosComponent() {
   const [hoverTodos, setHoverTodos] = useState(false);
 
   return (
-    <Container className="py-5 px-4" style={{ backgroundColor: "black" }}>
-      <h1
-        className="text-center mb-5"
-        style={{
-          color: "var(--color-games)",
-          fontSize: "2.8rem",
-          fontWeight: "bold",
-        }}
-      >
-        Proyectos destacados
-      </h1>
-      <Row>
-        {proyectos.map((p, index) => (
-          <Col md={4} className="mb-4 d-flex" key={index}>
-            <Card
-              className="w-100 h-100 d-flex flex-column"
-              style={{
-                backgroundColor: "black",
-                border: "1px solid rgba(255, 255, 0, 0.2)",
-                boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
-                borderRadius: "12px",
-              }}
-            >
-              <Card.Body className="d-flex flex-column">
-                <div className="text-center mb-3">
-                  <img
-                    src={p.imagen}
-                    alt={`Imagen de ${p.titulo}`}
-                    style={{ width: p.ancho }}
-                    className="img-fluid rounded shadow-lg"
-                  />
-                </div>
-                <Card.Title
-                  className="text-center mb-2"
-                  style={{ color: "var(--color-games)", fontWeight: "bold" }}
-                >
-                  {p.titulo}
-                </Card.Title>
-                <Card.Text style={{ flexGrow: 1, color: "white" }}>
-                  {p.texto}
-                </Card.Text>
-                <div className="d-flex justify-content-center mt-3">
-                  <HoverButton link={p.link} />
-                </div>
-              </Card.Body>
-            </Card>
+    <div style={{ backgroundColor: "black", color: "white" }}>
+      <Container className="py-5 px-4">
+        <h1
+          className="text-center mb-5"
+          style={{
+            color: "var(--color-games)",
+            fontSize: "2.8rem",
+            fontWeight: "bold",
+          }}
+        >
+          Proyectos destacados
+        </h1>
+        <Row>
+          {proyectos.map((p, index) => (
+            <Col md={4} className="mb-4 d-flex" key={index}>
+              <Card
+                className="w-100 h-100 d-flex flex-column"
+                style={{
+                  backgroundColor: "black",
+                  border: "1px solid rgba(255, 255, 0, 0.2)",
+                  boxShadow: "0 0 12px rgba(255, 255, 0, 0.15)",
+                  borderRadius: "12px",
+                }}
+              >
+                <Card.Body className="d-flex flex-column">
+                  <div className="text-center mb-3">
+                    <img
+                      src={p.imagen}
+                      alt={`Imagen de ${p.titulo}`}
+                      style={{ width: p.ancho }}
+                      className="img-fluid rounded shadow-lg"
+                    />
+                  </div>
+                  <Card.Title
+                    className="text-center mb-2"
+                    style={{ color: "var(--color-games)", fontWeight: "bold" }}
+                  >
+                    {p.titulo}
+                  </Card.Title>
+                  <Card.Text style={{ flexGrow: 1, color: "white" }}>
+                    {p.texto}
+                  </Card.Text>
+                  <div className="d-flex justify-content-center mt-3">
+                    <HoverButton link={p.link} />
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        <Row className="mt-4">
+          <Col className="d-flex justify-content-end">
+            <Link to="/proyectos">
+              <Button
+                style={{
+                  backgroundColor: hoverTodos
+                    ? "var(--color-secondary)"
+                    : "var(--color-games)",
+                  borderColor: hoverTodos
+                    ? "var(--color-secondary)"
+                    : "var(--color-games)",
+                  color: "black",
+                }}
+                onMouseEnter={() => setHoverTodos(true)}
+                onMouseLeave={() => setHoverTodos(false)}
+              >
+                Todos los proyectos
+              </Button>
+            </Link>
           </Col>
-        ))}
-      </Row>
-      <Row className="mt-4">
-        <Col className="d-flex justify-content-end">
-          <Link to="/proyectos">
-            <Button
-              style={{
-                backgroundColor: hoverTodos
-                  ? "var(--color-secondary)"
-                  : "var(--color-games)",
-                borderColor: hoverTodos
-                  ? "var(--color-secondary)"
-                  : "var(--color-games)",
-                color: "black",
-              }}
-              onMouseEnter={() => setHoverTodos(true)}
-              onMouseLeave={() => setHoverTodos(false)}
-            >
-              Todos los proyectos
-            </Button>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
+        </Row>
+      </Container>
+    </div>
   );
 }
 
