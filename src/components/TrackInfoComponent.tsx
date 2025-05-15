@@ -32,7 +32,7 @@ function HoverLinkButton({ to, children }: HoverLinkButtonProps) {
 function TrackInfoComponent() {
   return (
     <div style={{ color: "white", backgroundColor: "black" }}>
-      <Container className="py-5">
+      <Container className="py-5 mb-5">
         <Row className="align-items-center">
           <Col md={6}>
             <h2
